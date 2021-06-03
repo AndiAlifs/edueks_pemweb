@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?php echo base_url('index.php/home')?>">EduEx</a>
+    <a class="navbar-brand" href="<?php echo base_url('index.php/home')?> ">EduEx</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,7 +26,7 @@
           <a class="nav-link" href="<?php echo base_url('index.php/home/jurusan')?>">Jurusan</a>
         </li>
       </ul>
-      <a href="#" class="nav-link">Login</a>
+      <a href="<?php echo base_url('index.php/home/login')?>" class="nav-link">Login</a>
     </div>
   </div>
 </nav>
