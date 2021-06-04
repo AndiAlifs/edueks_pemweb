@@ -17,4 +17,8 @@ class Home extends CI_Controller {
         $this->load->helper('url');
         $this->load->view('login');
     }
+    public function register() {
+        $this->load->helper('url');
+        $this->load->view('register');
+    }
 }

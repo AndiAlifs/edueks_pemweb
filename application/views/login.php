@@ -14,6 +14,6 @@
         <br>
         <button type="submit" style="background-color: #53b8d6; color: white; border: 0px; border-radius: 10px; padding: 10px 14px;">Masuk</button>
     </form>
-    <h6>Belum punya akun? Gabung sekarang</h6> <a href=""></a>
+    <h5>Belum punya akun? Gabung sekarang <a href="<?php echo base_url('index.php/home/register')?>">Daftar</a></h5>
 </body>
 </html>

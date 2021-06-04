@@ -26,7 +26,7 @@
           <a class="nav-link active" href="<?php echo base_url('index.php/home/jurusan')?>">Jurusan</a>
         </li>
       </ul>
-      <a href="#" class="nav-link">Login</a>
+      <a href="<?php echo base_url('index.php/home/login')?>" class="nav-link">Login</a>
     </div>
   </div>
 </nav>
