@@ -9,7 +9,7 @@
 <body>
     <form action="<?php echo base_url('index.php/home/login_process')?>" method="post">
         <input type="hidden" name="cek" value="1">
-        <input type="text" name="email" placeholder="Email" style="margin: 10px;">
+        <input type="text" name="email" placeholder="Email" style="margin: 10px;" autofocus>
         <br>
         <input type="password" name="password" placeholder="Password" style="margin: 11px;">
         <br>

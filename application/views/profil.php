@@ -37,6 +37,18 @@
     </div>
   </div>
 </nav>
+<h1>Profil Pengguna</h1>
+<h5>Nama: <?= $profil->pnama?></h5>
+<h5>Email: <?= $profil->email?></h5>
+<h5>Universitas: <?= $profil->unama?></h5>
+<h5>Jurusan: <?= $profil->jnama?></h5>
+<h5>Angkatan: <?= $profil->angkatan?></h5>
+<h5>Keminatan: <?= $profil->keminatan?></h5>
+<br>
+<h4>Ulasan:</h4>
+<h5>Universitas</h5>
+
+<h5>Jurusan</h5>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </html>

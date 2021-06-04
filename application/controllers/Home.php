@@ -1,37 +1,43 @@
 <?php
 
 class Home extends CI_Controller {
-    public function index($cek) {
+    public function __construct() {
+        parent::__construct();
         $this->load->helper('url');
+        $this->load->model('Eduex');
+        session_start();
+    }
+    public function index($cek) {
+        $data['email'] = $this->input->post('email');
         $data['cek'] = $cek;
         $this->load->view('home', $data);
     }
     public function univ($cek) {
-        $this->load->helper('url');
+        $data['universitas'] = $this->Eduex->get_univ();
         $data['cek'] = $cek;
         $this->load->view('univ', $data);
     }
     public function jurusan($cek) {
-        $this->load->helper('url');
+        $data['jurusan'] = $this->Eduex->get_jurusan();
         $data['cek'] = $cek;
         $this->load->view('jurusan', $data);
     }
     public function profil($cek) {
-        $this->load->helper('url');
         $data['cek'] = $cek;
+        $email = $_SESSION['email'];
+        $data['profil'] = $this->Eduex->get_profil($email);
+        $data['profil'] = $data['profil'][0];
         $this->load->view('profil', $data);
     }
     public function login() {
-        $this->load->helper('url');
         $this->load->view('login');
     }
     public function login_process() {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
-        $this->load->model('Eduex');
         $row =  $this->Eduex->login($email, $password);
-        $this->load->helper('url');
         $cek = $this->input->post('cek');
+        $_SESSION['email'] = $email;
         if($row) {
             redirect("home/index/" . $cek);
         } else {
@@ -39,8 +45,6 @@ class Home extends CI_Controller {
         }
     }
     public function register() {
-        $this->load->helper('url');
-        $this->load->model('Eduex');
         $nama_univ = $this->Eduex->get_univ_name();
         $nama_jurusan = $this->Eduex->get_jurusan_name();
         $data['nama_univ'] = $nama_univ;
@@ -55,9 +59,7 @@ class Home extends CI_Controller {
         $jurusan = $this->input->post('jurusan');
         $angkatan = $this->input->post('angkatan');
         $keminatan = $this->input->post('keminatan');
-        $this->load->model('Eduex');
         $this->Eduex->register($email, $universitas, $jurusan, $password, $nama, $keminatan, $angkatan);
-        $this->load->helper('url');
         redirect('home/login');
     }
 }
