@@ -7,8 +7,8 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="" method="post">
-        <input type="text" name="username" placeholder="Email" style="margin: 10px;">
+    <form action="<?php echo base_url('index.php/home/login_process')?>" method="post">
+        <input type="text" name="email" placeholder="Email" style="margin: 10px;">
         <br>
         <input type="password" name="password" placeholder="Password" style="margin: 11px;">
         <br>

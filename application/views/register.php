@@ -9,22 +9,24 @@
 <body>
     <h5><a href="<?php echo base_url('index.php/home/login')?>">Kembali</a></h5>
     <h2>Registrasi Akun</h2>
-    <form action="" method="post">
+    <form action="<?php echo base_url('index.php/home/register_process')?>" method="post">
         <input type="email" name="email" id="" placeholder="Email" required>
         <br>
         <input type="text" name="nama" id="" placeholder="Nama" required>
         <br>
         <input type="password" name="password" id="" placeholder="Password" required>
         <br>
-        <select name="universitas" id="">
+        <label for="universitas">Universitas</label>
+        <select name="universitas" id="" required>
             <?php foreach ($nama_univ as $univ) : ?>    
-            <option value="<?= $univ->nama; ?>"><?= $univ->nama; ?> </option>
+            <option value="<?= $univ->id; ?>"><?= $univ->nama; ?> </option>
             <?php endforeach; ?>
         </select>
         <br>
-        <select name="jurusan" id="">
+        <label for="jurusan">Jurusan</label>
+        <select name="jurusan" id="" required>
             <?php foreach ($nama_jurusan as $jurusan) : ?>    
-            <option value="<?= $jurusan->nama; ?>"><?= $jurusan->nama; ?> </option>
+            <option value="<?= $jurusan->id; ?>"><?= $jurusan->nama; ?> </option>
             <?php endforeach; ?>
         </select>
         <br>
