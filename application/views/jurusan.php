@@ -10,23 +10,30 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?php echo base_url('index.php/home')?>">EduEx</a>
+    <a class="navbar-brand" href="<?php echo base_url('index.php/home/index/' . $cek)?>">EduEx</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="<?php echo base_url('index.php/home')?>">Home</a>
+          <a class="nav-link" aria-current="page" href="<?php echo base_url('index.php/home/index/' . $cek)?>">Home</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('index.php/home/univ')?>">Universitas</a>
+          <a class="nav-link" href="<?php echo base_url('index.php/home/univ/' . $cek)?>">Universitas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="<?php echo base_url('index.php/home/jurusan')?>">Jurusan</a>
+        <a class="nav-link active" href="<?php echo base_url('index.php/home/jurusan/' . $cek)?>">Jurusan</a>
         </li>
       </ul>
-      <a href="<?php echo base_url('index.php/home/login')?>" class="nav-link">Login</a>
+      <?php
+        if($cek == 1) { ?>
+          <a class="nav-link" href="<?php echo base_url('index.php/home/profil/1')?>" class="nav-link">Profil</a>
+          <a class="nav-link" href="<?php echo base_url('index.php/home/index/0')?>" class="nav-link">Log Out</a>
+        <?php } else { ?>
+          <a class="nav-link" href="<?php echo base_url('index.php/home/login')?>" class="nav-link">Login</a>
+        <?php }
+      ?>
     </div>
   </div>
 </nav>

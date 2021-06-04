@@ -1,17 +1,25 @@
 <?php
 
 class Home extends CI_Controller {
-    public function index() {
+    public function index($cek) {
         $this->load->helper('url');
-        $this->load->view('home');
+        $data['cek'] = $cek;
+        $this->load->view('home', $data);
     }
-    public function univ() {
+    public function univ($cek) {
         $this->load->helper('url');
-        $this->load->view('univ');
+        $data['cek'] = $cek;
+        $this->load->view('univ', $data);
     }
-    public function jurusan() {
+    public function jurusan($cek) {
         $this->load->helper('url');
-        $this->load->view('jurusan');
+        $data['cek'] = $cek;
+        $this->load->view('jurusan', $data);
+    }
+    public function profil($cek) {
+        $this->load->helper('url');
+        $data['cek'] = $cek;
+        $this->load->view('profil', $data);
     }
     public function login() {
         $this->load->helper('url');
@@ -23,8 +31,9 @@ class Home extends CI_Controller {
         $this->load->model('Eduex');
         $row =  $this->Eduex->login($email, $password);
         $this->load->helper('url');
+        $cek = $this->input->post('cek');
         if($row) {
-            $this->load->view('home');
+            redirect("home/index/" . $cek);
         } else {
             $this->load->view('login');
         }
