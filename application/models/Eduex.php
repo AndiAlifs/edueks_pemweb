@@ -10,7 +10,11 @@ class Eduex extends CI_Model {
         return $query->result();
     }
     public function get_univ() {
-        $query = $this->db->query('SELECT foto,nama,alamat,penjelasan FROM universitas ORDER BY nama');
+        $query = $this->db->query('SELECT id,foto,nama,alamat,penjelasan FROM universitas ORDER BY nama');
+        return $query->result();
+    }
+    public function get_univ1($id) {
+        $query = $this->db->query("SELECT id,foto,nama,alamat,penjelasan FROM universitas WHERE id = '$id'");
         return $query->result();
     }
     public function get_jurusan_name() {
@@ -18,7 +22,11 @@ class Eduex extends CI_Model {
         return $query->result();
     }
     public function get_jurusan() {
-        $query = $this->db->query('SELECT foto,nama,penjelasan FROM jurusan ORDER BY nama');
+        $query = $this->db->query('SELECT id,foto,nama,penjelasan FROM jurusan ORDER BY nama');
+        return $query->result();
+    }
+    public function get_jurusan1($id) {
+        $query = $this->db->query("SELECT id,foto,nama,penjelasan FROM jurusan WHERE id = '$id'");
         return $query->result();
     }
     public function login($email, $password) {
@@ -69,5 +77,23 @@ class Eduex extends CI_Model {
     }
     public function delete_review_jurusan($email) {
         $query = $this->db->query("DELETE FROM review_jurusan WHERE email = '$email'");
+    }
+    public function get_review_univ($univ) {
+        $query = $this->db->query("
+        SELECT j.nama, p.angkatan, r.review 
+            FROM review_universitas r
+            INNER JOIN pengguna p ON r.email = p.email
+            INNER JOIN jurusan j ON p.jurusan = j.id
+            WHERE r.universitas = '$univ'");
+        return $query->result();
+    }
+    public function get_review_jurusan($jurusan) {
+        $query = $this->db->query("
+        SELECT u.nama, p.keminatan, p.angkatan, r.review 
+            FROM review_jurusan r
+            INNER JOIN pengguna p ON r.email = p.email
+            INNER JOIN universitas u ON p.universitas = u.id
+            WHERE r.jurusan = '$jurusan'");
+        return $query->result();
     }
 }

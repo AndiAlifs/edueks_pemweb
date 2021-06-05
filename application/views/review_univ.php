@@ -37,18 +37,18 @@
     </div>
   </div>
 </nav>
-<?php foreach ($universitas as $univ): 
-$penjelasan_singkat = substr($univ->penjelasan, 0, 100);
-?>
 <div style="background-color: whitesmoke; margin: 10px;">
-<!-- <img src="data:image/jpeg;base64,'.base64_encode($univ->image->load()) .'" alt="Foto univ"> -->
-<h5><?= $univ->nama?></h5>
-<h6><?= $univ->alamat?></h6>
-<p><?= $penjelasan_singkat . "..."?></p>
-<form action="<?= base_url('index.php/home/review_univ/' . $cek)?>" method="post">
-  <input type="hidden" name="univ" value="<?= $univ->id ?>">
-  <button type="submit">Baca lebih lanjut</button>
-</form>
+<?= $universitas->nama?>
+<br>
+<?= $universitas->alamat?>
+<br>
+<?= $universitas->penjelasan?>
+</div>
+<?php foreach ($review as $rev): ?>
+<div style="background-color: whitesmoke; margin: 10px;">
+<h6><?= $rev->nama?></h6>
+<h6><?= $rev->angkatan?></h6>
+<p><?= $rev->review?></p>
 </div>
 <?php endforeach; ?>
 </body>

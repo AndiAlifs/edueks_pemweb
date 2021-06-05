@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universitas</title>
+    <title>Review Jurusan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
@@ -20,10 +20,10 @@
           <a class="nav-link" aria-current="page" href="<?php echo base_url('index.php/home/index/' . $cek)?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="<?php echo base_url('index.php/home/univ/' . $cek)?>">Universitas</a>
+          <a class="nav-link" href="<?php echo base_url('index.php/home/univ/' . $cek)?>">Universitas</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('index.php/home/jurusan/' . $cek)?>">Jurusan</a>
+        <a class="nav-link active" href="<?php echo base_url('index.php/home/jurusan/' . $cek)?>">Jurusan</a>
         </li>
       </ul>
       <?php
@@ -37,18 +37,17 @@
     </div>
   </div>
 </nav>
-<?php foreach ($universitas as $univ): 
-$penjelasan_singkat = substr($univ->penjelasan, 0, 100);
-?>
 <div style="background-color: whitesmoke; margin: 10px;">
-<!-- <img src="data:image/jpeg;base64,'.base64_encode($univ->image->load()) .'" alt="Foto univ"> -->
-<h5><?= $univ->nama?></h5>
-<h6><?= $univ->alamat?></h6>
-<p><?= $penjelasan_singkat . "..."?></p>
-<form action="<?= base_url('index.php/home/review_univ/' . $cek)?>" method="post">
-  <input type="hidden" name="univ" value="<?= $univ->id ?>">
-  <button type="submit">Baca lebih lanjut</button>
-</form>
+<?= $jurusan->nama?>
+<br>
+<?= $jurusan->penjelasan?>
+</div>
+<?php foreach ($review as $rev): ?>
+<div style="background-color: whitesmoke; margin: 10px;">
+<h6><?= $rev->nama?></h6>
+<h6><?php if(!isset($rev->keminatan)) echo ""; else $rev->keminatan?></h6>
+<h6><?= $rev->angkatan?></h6>
+<p><?= $rev->review?></p>
 </div>
 <?php endforeach; ?>
 </body>

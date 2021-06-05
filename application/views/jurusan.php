@@ -44,6 +44,10 @@ $penjelasan_singkat = substr($jur->penjelasan, 0, 100);
 <!-- <img src="data:image/jpeg;base64,'.base64_encode($jur->image->load()) .'" alt="Foto jur"> -->
 <h5><?= $jur->nama?></h5>
 <p><?= $penjelasan_singkat . "..."?></p>
+<form action="<?= base_url('index.php/home/review_jurusan/' . $cek)?>" method="post">
+  <input type="hidden" name="jurusan" value="<?= $jur->id ?>">
+  <button type="submit">Baca lebih lanjut</button>
+</form>
 </div>
 <?php endforeach; ?>
 </body>

@@ -17,10 +17,26 @@ class Home extends CI_Controller {
         $data['cek'] = $cek;
         $this->load->view('univ', $data);
     }
+    public function review_univ($cek) {
+        $id = $this->input->post('univ');
+        $data['cek'] = $cek;
+        $data['universitas'] = $this->Eduex->get_univ1($id);
+        $data['universitas'] = $data['universitas'][0];
+        $data['review'] = $this->Eduex->get_review_univ($data['universitas']->id);
+        $this->load->view('review_univ', $data);
+    }
     public function jurusan($cek) {
         $data['jurusan'] = $this->Eduex->get_jurusan();
         $data['cek'] = $cek;
         $this->load->view('jurusan', $data);
+    }
+    public function review_jurusan($cek) {
+        $id = $this->input->post('jurusan');
+        $data['cek'] = $cek;
+        $data['jurusan'] = $this->Eduex->get_jurusan1($id);
+        $data['jurusan'] = $data['jurusan'][0];
+        $data['review'] = $this->Eduex->get_review_univ($data['jurusan']->id);
+        $this->load->view('review_jurusan', $data);
     }
     public function profil($cek) {
         $data['cek'] = $cek;
