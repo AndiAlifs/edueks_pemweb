@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review Jurusan</title>
+    <title>Profil Pengguna</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
@@ -47,8 +47,37 @@
 <br>
 <h4>Ulasan:</h4>
 <h5>Universitas</h5>
-
+<?php if(!isset($univ[0])) { ?>
+  <form action="<?= base_url('index.php/home/review/1')?>" method="post">
+    <input type="hidden" name="review" value="univ">
+    <button type="submit">Membuat Review</button>
+  </form>
+<?php } else { ?>
+  <form action="<?= base_url('index.php/home/review_update/1')?>" method="post">
+    <input type="hidden" name="review" value="univ">
+    <button type="submit">Mengubah Review</button>
+  </form>
+  <form action="<?= base_url('index.php/home/review_delete/')?>" method="post">
+    <input type="hidden" name="review" value="univ">
+    <button type="submit">Menghapus Review</button>
+  </form>
+<?php } ?>
 <h5>Jurusan</h5>
+<?php if(!isset($jurusan[0])) { ?>
+  <form action="<?= base_url('index.php/home/review/1')?>" method="post">
+    <input type="hidden" name="review" value="jurusan">
+    <button type="submit">Membuat Review</button>
+  </form>
+<?php } else { ?>
+  <form action="<?= base_url('index.php/home/review_update/1')?>" method="post">
+    <input type="hidden" name="review" value="jurusan">
+    <button type="submit">Mengubah Review</button>
+  </form>
+  <form action="<?= base_url('index.php/home/review_delete/')?>" method="post">
+    <input type="hidden" name="review" value="jurusan">
+    <button type="submit">Menghapus Review</button>
+  </form>
+<?php } ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </html>

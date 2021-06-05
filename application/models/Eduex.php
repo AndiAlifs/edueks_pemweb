@@ -40,4 +40,34 @@ class Eduex extends CI_Model {
          WHERE email = '$email'");
         return $query->result();
     }
+    public function get_pengguna($email) {
+        $query = $this->db->query("SELECT * FROM pengguna WHERE email = '$email'");
+        return $query->result();
+    }
+    public function get_review_univ_profil($email) {
+        $query = $this->db->query("SELECT review FROM review_universitas WHERE email = '$email'");
+        return $query->result();
+    }
+    public function get_review_jurusan_profil($email) {
+        $query = $this->db->query("SELECT review FROM review_jurusan WHERE email = '$email'");
+        return $query->result();
+    }
+    public function insert_review_univ($email, $univ, $review) {
+        $query = $this->db->query("INSERT INTO review_universitas (email, universitas, review) VALUES ('$email', '$univ', '$review')");
+    }
+    public function update_review_univ($email, $review) {
+        $query = $this->db->query("UPDATE review_universitas SET review = '$review' WHERE email = '$email'");
+    }
+    public function insert_review_jurusan($email, $jurusan, $review) {
+        $query = $this->db->query("INSERT INTO review_jurusan (email, jurusan, review) VALUES ('$email', '$jurusan', '$review')");
+    }
+    public function update_review_jurusan($email, $review) {
+        $query = $this->db->query("UPDATE review_jurusan SET review = '$review' WHERE email = '$email'");
+    }
+    public function delete_review_univ($email) {
+        $query = $this->db->query("DELETE FROM review_universitas WHERE email = '$email'");
+    }
+    public function delete_review_jurusan($email) {
+        $query = $this->db->query("DELETE FROM review_jurusan WHERE email = '$email'");
+    }
 }

@@ -27,7 +27,53 @@ class Home extends CI_Controller {
         $email = $_SESSION['email'];
         $data['profil'] = $this->Eduex->get_profil($email);
         $data['profil'] = $data['profil'][0];
+        $data['univ'] = $this->Eduex->get_review_univ_profil($email);
+        $data['jurusan'] = $this->Eduex->get_review_jurusan_profil($email);
         $this->load->view('profil', $data);
+    }
+    public function review($cek) {
+        $data['cek'] = $cek;
+        $this->load->view('review', $data);
+    }
+    public function review_process() {
+        $bentuk = $this->input->post('bentuk');
+        $jenis = $this->input->post('jenis');
+        $review = $this->input->post('review');
+        $email = $_SESSION['email'];
+        $pengguna = $this->Eduex->get_pengguna($email);
+        $pengguna = $pengguna[0];
+        if($jenis == "univ") {
+            if($bentuk == "tambah") {
+                $this->Eduex->insert_review_univ($pengguna->email, $pengguna->universitas, $review);
+            } else {
+                $this->Eduex->update_review_univ($pengguna->email, $review);
+            }
+            redirect("home/profil/1");
+        } else {
+            if($bentuk == "tambah") {
+                $this->Eduex->insert_review_jurusan($pengguna->email, $pengguna->jurusan, $review);
+            } else {
+                $this->Eduex->update_review_jurusan($pengguna->email, $review);
+            }
+            redirect("home/profil/1");
+        }
+    }
+    public function review_update($cek) {
+        $data['cek'] = $cek;
+        $email = $_SESSION['email'];
+        $data['univ'] = $this->Eduex->get_review_univ_profil($email);
+        $data['jurusan'] = $this->Eduex->get_review_jurusan_profil($email);
+        $this->load->view('review', $data);
+    }
+    public function review_delete() {
+        $email = $_SESSION['email'];
+        $jenis = $this->input->post('review');
+        if($jenis == "univ") {
+            $this->Eduex->delete_review_univ($email);
+        } else {
+            $this->Eduex->delete_review_jurusan($email);
+        }
+        redirect("home/profil/1");
     }
     public function login() {
         $this->load->view('login');
