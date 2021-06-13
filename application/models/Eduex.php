@@ -14,7 +14,7 @@ class Eduex extends CI_Model {
         return $query->result();
     }
     public function get_univ1($id) {
-        $query = $this->db->query("SELECT id,link_photo,nama,alamat,penjelasan FROM universitas WHERE id = '$id'");
+        $query = $this->db->query("SELECT id,link_photo,nama,alamat,penjelasan,logo FROM universitas WHERE id = '$id'");
         return $query->result();
     }
     public function get_jurusan_name() {
