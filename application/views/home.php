@@ -10,9 +10,9 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="<?php // echo base_url('index.php/home/index/' . $cek)?>">EduEx</a> -->
+    
     <a class="navbar-brand" href="<?php echo base_url('index.php/home/index/' . $cek)?>">
-      <img src="<?php echo $this->config->item('base_url'); ?>/images/logo-tanpa-slogan.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      <img src="<?php echo $this->config->item('base_url'); ?>logo_tanpa_slogan.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
       Eduex
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
