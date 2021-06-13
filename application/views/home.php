@@ -15,7 +15,7 @@
     <div class="container-fluid">
 
       <a class="navbar-brand" href="<?php echo base_url('home/index/' . $cek) ?>">
-        <img src="<?php echo $this->config->item('base_url'); ?>logo_tanpa_slogan.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        <img src="<?php echo $this->config->item('base_url'); ?>images/logo1.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
         Eduex
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
       </div>
     </div>
   </nav>
-  <img src="<?php echo $this->config->item('base_url'); ?>images/logo.png" class="img-fluid" alt="Logo Eduex">
+  <img src="<?php echo base_url('images/logo.png') ?>" class="img-fluid" alt="Logo Eduex">
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
