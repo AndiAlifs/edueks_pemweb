@@ -10,7 +10,11 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?php echo base_url('index.php/home/index/' . $cek)?>">EduEx</a>
+    <!-- <a class="navbar-brand" href="<?php // echo base_url('index.php/home/index/' . $cek)?>">EduEx</a> -->
+    <a class="navbar-brand" href="<?php echo base_url('index.php/home/index/' . $cek)?>">
+      <img src="<?php echo $this->config->item('base_url'); ?>/images/logo-tanpa-slogan.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      Eduex
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,6 +41,7 @@
     </div>
   </div>
 </nav>
+<img src="<?php echo $this->config->item('base_url'); ?>logo.png" class="img-fluid" alt="Logo Eduex">
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </html>
