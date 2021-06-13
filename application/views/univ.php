@@ -31,9 +31,12 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2fdf59;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url('home/index/' . $cek) ?>">EduEx</a>
+            <a class="navbar-brand" href="<?php echo base_url('home/index/' . $cek) ?>">
+            <img src="<?php echo $this->config->item('base_url'); ?>images/logo1.png" alt="" width="30" height="24" class="d-inline-block align-text-middle">
+            EduEx
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,14 +52,22 @@
                         <a class="nav-link" href="<?php echo base_url('home/jurusan/' . $cek) ?>">Jurusan</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav">
                 <?php
-                if ($cek == 1) { ?>
-                    <a class="nav-link" href="<?php echo base_url('home/profil/1') ?>" class="nav-link">Profil</a>
-                    <a class="nav-link" href="<?php echo base_url('home/index/0') ?>" class="nav-link">Log Out</a>
-                <?php } else { ?>
-                    <a class="nav-link" href="<?php echo base_url('home/login') ?>" class="nav-link">Login</a>
-                <?php }
+                    if($cek == 1) { ?>
+                    <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url('index.php/home/profil/1')?>" class="nav-link">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url('index.php/home/index/0')?>" class="nav-link">Log Out</a>
+                    </li>
+                    <?php } else { ?>
+                    <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url('index.php/home/login')?>" class="nav-link">Login</a>
+                    </li>
+                    <?php }
                 ?>
+                </ul>
             </div>
         </div>
     </nav>
