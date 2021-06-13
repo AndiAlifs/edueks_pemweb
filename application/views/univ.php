@@ -71,7 +71,7 @@
             <?php foreach ($universitas as $univ) :
                 $penjelasan_singkat = substr($univ->penjelasan, 0, 100);
             ?>  
-                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
                     <div class="card m-2 list-univ">
                         <img class="card-img-top" src="<?= $univ->link_photo ?>" alt="Card image cap" height="200rem">
                         <div class="card-header">
@@ -89,6 +89,8 @@
                 </div>
                 
             <?php endforeach; ?>
+
+            
         </div>
 
 
