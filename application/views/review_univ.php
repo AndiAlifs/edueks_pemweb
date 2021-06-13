@@ -37,20 +37,24 @@
     </div>
   </div>
 </nav>
-<div style="background-color: whitesmoke; margin: 10px;">
-<?= $universitas->nama?>
-<br>
-<?= $universitas->alamat?>
-<br>
-<?= $universitas->penjelasan?>
+<div class="container p-3">
+  <h3><?= $universitas->nama?></h3>
+  <div class="p-3" style="background-color: whitesmoke; margin: 10px;">
+    <h6>Lokasi: <?= $universitas->alamat?></h6>
+    <br>
+    <p><?= $universitas->penjelasan?></p>
+  </div>
+  <h3>Review:</h3>
+  <?php foreach ($review as $rev): ?>
+    <div class="p-3" style="background-color: whitesmoke; margin: 10px;">
+      <ul class="list-inline">
+        <li class="list-inline-item">Jurusan: <?= $rev->nama?></li>
+        <li class="list-inline-item">Angkatan: <?= $rev->angkatan?></li>
+      </ul>
+      <p><?= $rev->review?></p>
+    </div>
+    <?php endforeach; ?>
 </div>
-<?php foreach ($review as $rev): ?>
-<div style="background-color: whitesmoke; margin: 10px;">
-<h6><?= $rev->nama?></h6>
-<h6><?= $rev->angkatan?></h6>
-<p><?= $rev->review?></p>
-</div>
-<?php endforeach; ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </html>
