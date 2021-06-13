@@ -79,7 +79,7 @@
               <h5 class="card-title"><?= $jur->nama ?></h5>
               <p class="card-text"><?= $penjelasan_singkat . "..." ?></p>
               <form action="<?= base_url('home/review_jurusan/' . $cek) ?>" method="post">
-                <input type="hidden" name="univ" value="<?= $jur->id ?>">
+                <input type="hidden" name="jurusan" value="<?= $jur->id ?>">
                 <button class="btn btn-primary" type="submit">Baca lebih lanjut</button>
               </form>
             </div>
