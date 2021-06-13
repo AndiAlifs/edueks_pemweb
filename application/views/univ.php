@@ -21,7 +21,7 @@
             border-width: 0.3em;
         }
 
-        .card-img-top{
+        .card-img-top {
             border-top-left-radius: 1em;
             border-top-right-radius: 1em;
         }
@@ -67,25 +67,32 @@
     </div>
 
     <div class="bg-primary p-5 d-flex justify-content-around" id="latar-1">
-        <?php foreach ($universitas as $univ) :
-            $penjelasan_singkat = substr($univ->penjelasan, 0, 100);
-        ?>
-            <div class="card m-3 list-univ" style="width: 25rem;">
-                <img class="card-img-top" src="<?= $univ->link_photo ?>" alt="Card image cap" height="200rem">
-                <div class="card-header">
-                    <?= $univ->alamat ?>
+        <div class="row justify-content-between">
+            <?php foreach ($universitas as $univ) :
+                $penjelasan_singkat = substr($univ->penjelasan, 0, 100);
+            ?>  
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card m-2 list-univ">
+                        <img class="card-img-top" src="<?= $univ->link_photo ?>" alt="Card image cap" height="200rem">
+                        <div class="card-header">
+                            <?= $univ->alamat ?>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $univ->nama ?></h5>
+                            <p class="card-text"><?= $penjelasan_singkat . "..." ?></p>
+                            <form action="<?= base_url('index.php/home/review_univ/' . $cek) ?>" method="post">
+                                <input type="hidden" name="univ" value="<?= $univ->id ?>">
+                                <button class="btn btn-primary" type="submit">Baca lebih lanjut</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title"><?= $univ->nama ?></h5>
-                    <p class="card-text"><?= $penjelasan_singkat . "..." ?></p>
-                    <form action="<?= base_url('index.php/home/review_univ/' . $cek) ?>" method="post">
-                        <input type="hidden" name="univ" value="<?= $univ->id ?>">
-                        <button class="btn btn-primary" type="submit">Baca lebih lanjut</button>
-                    </form>
-                </div>
-            </div>
+                
+            <?php endforeach; ?>
+        </div>
 
-        <?php endforeach; ?>
+
+
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
