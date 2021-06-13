@@ -35,7 +35,7 @@ class Home extends CI_Controller {
         $data['cek'] = $cek;
         $data['jurusan'] = $this->Eduex->get_jurusan1($id);
         $data['jurusan'] = $data['jurusan'][0];
-        $data['review'] = $this->Eduex->get_review_univ($data['jurusan']->id);
+        $data['review'] = $this->Eduex->get_review_jurusan($data['jurusan']->id);
         $this->load->view('review_jurusan', $data);
     }
     public function profil($cek) {
