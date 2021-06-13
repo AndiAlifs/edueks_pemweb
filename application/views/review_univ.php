@@ -58,7 +58,7 @@
   </div>
   <div class="container p-3">
     <h2 class="text-center display-3 mb-4"><?= $universitas->nama ?></h2>
-    <div class="p-3 mb-3" style="background-color: whitesmoke;">
+    <div class="p-3 mb-3">
       <h6>Lokasi: <?= $universitas->alamat ?></h6>
       <br>
       <p style="text-align: justify;"><?= $universitas->penjelasan ?></p>
