@@ -83,6 +83,7 @@
         </ul>
         <p class="blockquote font-italic">"<?= $rev->review ?>"</p>
       </div>
+      <hr>
     <?php endforeach; ?>
   </div>
 </body>

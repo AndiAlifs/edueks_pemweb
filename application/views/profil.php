@@ -70,6 +70,7 @@
       <input type="hidden" name="review" value="univ">
       <button class="btn btn-success" type="submit">Mengubah Review</button>
       </form>
+      <br>
       <form action="<?= base_url('index.php/home/review_delete/')?>" method="post">
       <input type="hidden" name="review" value="univ">
       <button class="btn btn-success" type="submit">Menghapus Review</button>
@@ -83,11 +84,12 @@
     <button class="btn btn-success" type="submit">Membuat Review</button>
   </form>
   <?php } else { ?>
-  <div class="d-grid gap-2 d-md-block">
+  <div class="d-grid gap-4 d-md-block">
     <form action="<?= base_url('index.php/home/review_update/1')?>" method="post">
     <input type="hidden" name="review" value="jurusan">
     <button class="btn btn-success" type="submit">Mengubah Review</button>
     </form>
+    <br>
     <form action="<?= base_url('index.php/home/review_delete/')?>" method="post">
     <input type="hidden" name="review" value="jurusan">
     <button class="btn btn-success" type="submit">Menghapus Review</button>
