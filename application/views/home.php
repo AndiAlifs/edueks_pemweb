@@ -54,8 +54,8 @@
   <div class="text-center container">
     <img src="<?php echo base_url('images/logo.png') ?>" class="img-fluid rounded" alt="Logo Eduex" width="300" height="300">
     <div class="container m-3">
-      <h2>Selamat Datang di UniEx</h2>
-      <h6>UniEx adalah tempat untuk memberi ulasan dan juga membaca ulasan dari mahasiswa untuk universitas dan jurusan yang ada di Indonesia!</h6>
+      <h2>Selamat Datang di EduEx</h2>
+      <h6>EduEx adalah tempat untuk memberi ulasan dan juga membaca ulasan dari mahasiswa untuk universitas dan jurusan yang ada di Indonesia!</h6>
     </div>
     <div class="container m-3">
       <?php
