@@ -85,13 +85,13 @@
                     <br>
                     <input type="text" name="keminatan" id="" placeholder="Keminatan"> <label for="keminatan" style="font-size:10px">*kosongi jika tidak ada</label>
                     <br>
-                </form>
             </div>    
             <br>   
         </div>
         <div class="col text-center">
             <button type="submit" class="btn-lg">Daftar</button>        
         </div>
+                </form>
         <p style="text-align: center;">Sudah mempunyai akun? <a href="<?php echo base_url('index.php/home/login') ?>">Login </a></p>                    
     </div>
 </body>
