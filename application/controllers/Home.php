@@ -7,7 +7,7 @@ class Home extends CI_Controller {
         $this->load->model('Eduex');
         session_start();
     }
-    public function index($cek=1) {
+    public function index($cek=0) {
         $data['email'] = $this->input->post('email');
         $data['cek'] = $cek;
         $this->load->view('home', $data);
