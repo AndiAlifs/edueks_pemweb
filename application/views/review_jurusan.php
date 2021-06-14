@@ -24,9 +24,12 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2fdf59;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url('index.php/home/index/' . $cek) ?>">EduEx</a>
+                <a class="navbar-brand" href="<?php echo base_url('home/index/' . $cek) ?>">
+                    <img src="<?php echo $this->config->item('base_url'); ?>images/logo1.png" alt="" width="30" height="24" class="d-inline-block align-text-middle">
+                EduEx
+                </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,14 +45,22 @@
                         <a class="nav-link active" href="<?php echo base_url('index.php/home/jurusan/' . $cek) ?>">Jurusan</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav">
                 <?php
-                if ($cek == 1) { ?>
-                    <a class="nav-link" href="<?php echo base_url('index.php/home/profil/1') ?>" class="nav-link">Profil</a>
-                    <a class="nav-link" href="<?php echo base_url('index.php/home/index/0') ?>" class="nav-link">Log Out</a>
-                <?php } else { ?>
-                    <a class="nav-link" href="<?php echo base_url('index.php/home/login') ?>" class="nav-link">Login</a>
-                <?php }
+                    if($cek == 1) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('index.php/home/profil/1')?>" class="nav-link">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('index.php/home/index/0')?>" class="nav-link">Log Out</a>
+                    </li>
+                    <?php } else { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('index.php/home/login')?>" class="nav-link">Login</a>
+                    </li>
+                    <?php }
                 ?>
+                </ul>
             </div>
         </div>
     </nav>
@@ -106,16 +117,16 @@
             </div>
         </div>
         <br>
-        <h5 class="font-weight-bold">REVIEW</h5>
-        <?php foreach ($review as $rev) : ?>
-            <div style="background-color: whitesmoke; margin: 10px;">
-                <h6><?= $rev->nama ?></h6>
-                <h6><?php if (!isset($rev->keminatan)) echo "";
-                    else $rev->keminatan ?></h6>
-                <h6><?= $rev->angkatan ?></h6>
-                <p><?= $rev->review ?></p>
-            </div>
-        <?php endforeach; ?>
+        <h3>Review:</h3>
+    <?php foreach ($review as $rev) : ?>
+      <div class="review p-3" style="background-color: whitesmoke;">
+        <ul class="list-inline">
+          <li class="list-inline-item">Jurusan: <?= $rev->nama ?></li>
+          <li class="list-inline-item">Angkatan: <?= $rev->angkatan ?></li>
+        </ul>
+        <p class="blockquote font-italic">"<?= $rev->review ?>"</p>
+      </div>
+    <?php endforeach; ?>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
