@@ -22,11 +22,11 @@ class Eduex extends CI_Model {
         return $query->result();
     }
     public function get_jurusan() {
-        $query = $this->db->query('SELECT id,foto,nama,penjelasan FROM jurusan ORDER BY nama');
+        $query = $this->db->query('SELECT id,nama,penjelasan FROM jurusan ORDER BY nama');
         return $query->result();
     }
     public function get_jurusan1($id) {
-        $query = $this->db->query("SELECT id,foto,nama,penjelasan FROM jurusan WHERE id = '$id'");
+        $query = $this->db->query("SELECT id,nama,penjelasan FROM jurusan WHERE id = '$id'");
         return $query->result();
     }
     public function login($email, $password) {
