@@ -121,7 +121,7 @@
     <?php foreach ($review as $rev) : ?>
       <div class="review p-3" style="background-color: whitesmoke;">
         <ul class="list-inline">
-          <li class="list-inline-item">Jurusan: <?= $rev->nama ?></li>
+          <li class="list-inline-item">Universitas: <?= $rev->nama ?></li>
           <li class="list-inline-item">Angkatan: <?= $rev->angkatan ?></li>
         </ul>
         <p class="blockquote font-italic">"<?= $rev->review ?>"</p>
