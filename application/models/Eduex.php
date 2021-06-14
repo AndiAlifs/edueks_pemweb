@@ -30,7 +30,7 @@ class Eduex extends CI_Model {
         return $query->result();
     }
     public function login($email, $password) {
-        $query = $this->db->query("CALL SP_Login('$email', '$password')");
+        $query = $this->db->query("SELECT * FROM pengguna WHERE email='$email' AND '$password'");
         return $query->result();
     }
     public function register($email, $universitas, $jurusan, $password, $nama, $keminatan, $angkatan) {
